@@ -3,563 +3,228 @@
 <topic id="information-classification-handling-and-security-guide">
   <title>Information classification, handling and security guide</title>
   <body>
-    <p>All <ph conref="conrefs.dita#conrefs/mojlong"/> employees interact with information,
-      and are responsible for its protection.
-      Information security must be considered during the process of designing,
-      maintaining,
-      and securing the <ph conref="conrefs.dita#conrefs/moj"/>'s IT systems that are used to process information.</p>
-    <p>However,
-        not all information warrants the strictest levels of protection.
-        This is why information classification is so important to the <ph conref="conrefs.dita#conrefs/moj"/> –
-        to ensure that the department can focus its security efforts on its most sensitive information.
-        Information security must be proportionate to the security classification of the information,
-        and must be considered throughout the information lifecycle to maintain its confidentiality,
-        integrity,
-        and availability.</p>
+    <p>Information classification is the process by which the <ph conref="conrefs.dita#conrefs/mojlong"/> assesses the level of protection it gives to the information that it holds.</p>
+    <p>Protective controls must be balanced with the need for utilising those assets to support the effective conduct of <ph conref="conrefs.dita#conrefs/moj"/> business.</p>
   </body>
-  <topic id="classifying-information">
-    <title>Classifying information</title>
+ 
+  <topic id="key-principles">
+    <title>Key principles</title>
     <body>
-      <p>The three information security classifications the <ph conref="conrefs.dita#conrefs/moj"/> uses are <ph conref="conrefs.dita#conrefs/official"/>,
-        <ph conref="conrefs.dita#conrefs/secret"/>,
-        and <ph conref="conrefs.dita#conrefs/topsecret"/>.
-        This follows the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/>.</p>
-      <p>Each information security classification has a minimum set of security measures associated with it that need to be applied.
-        These security measures might change,
-        depending on the information lifecycle stage.</p>
-      <table>
-        <tgroup cols="2">
-          <colspec colname="col1" colnum="1"/>
-          <colspec colname="col2" colnum="2"/>
-          <thead>
-            <row>
-              <entry colname="col1">Classification</entry>
-              <entry colname="col2">Description</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry colname="col1"><b><ph conref="conrefs.dita#conrefs/official"/></b></entry>
-              <entry colname="col2">All information related to routine business,
-                operations,
-                and services.
-                If this information is lost,
-                stolen,
-                or published,
-                it could have damaging consequences,
-                but is not subject to a heightened threat profile.
-                For regular,
-                unsupervised access to <ph conref="conrefs.dita#conrefs/official"/> information,
-                someone would be expected to have achieved <xref href="https://www.gov.uk/government/publications/government-baseline-personnel-security-standard" format="html" scope="external">Baseline Personnel Security Standard (BPSS)</xref> assessment.</entry>
-            </row>
-            <row>
-              <entry colname="col1"><b><ph conref="conrefs.dita#conrefs/secret"/></b></entry>
-              <entry colname="col2">Very sensitive information that requires protection against highly sophisticated,
-                well-resourced,
-                and determined threat actors.
-                For example,
-                where compromise could seriously damage military capabilities,
-                international relations,
-                or the investigation of a serious crime.
-                For regular,
-                unsupervised access to <ph conref="conrefs.dita#conrefs/secret"/> information,
-                someone would be expected to have passed <xref href="https://www.gov.uk/guidance/security-vetting-and-clearance#applicant" format="html" scope="external">National Security Vetting</xref> Security Check (SC) clearance.
-                In exceptional circumstances,
-                someone with BPSS might be granted occasional supervised access to UK <ph conref="conrefs.dita#conrefs/secret"/> assets,
-                or be required to work in areas where <ph conref="conrefs.dita#conrefs/secret"/> or <ph conref="conrefs.dita#conrefs/topsecret"/> information might be overheard.</entry>
-            </row>
-            <row>
-              <entry colname="col1"><b><ph conref="conrefs.dita#conrefs/topsecret"/></b></entry>
-              <entry colname="col2">Exceptionally sensitive information that directly supports,
-                or threatens,
-                the national security of the UK or its allies,
-                and requires extremely high assurance of protection from all threats.</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-      <p>Securing the <ph conref="conrefs.dita#conrefs/moj"/>'s information must be done with a combination of information security measures:
-      <table>
-        <tgroup cols="2">
-          <colspec colname="col1" colnum="1" colwidth="40*"/>
-          <colspec colname="col2" colnum="2" colwidth="60*"/>
-          <thead>
-            <row>
-              <entry colname="col1">Type of Measure</entry>
-              <entry colname="col2">Description</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry colname="col1"><b><codeph>PERSONNEL</codeph></b></entry>
-              <entry colname="col2">Personnel should be aware of their security responsibilities and in turn acquire security clearances and undertake training to support the <ph conref="conrefs.dita#conrefs/moj"/>'s information security objectives.</entry>
-            </row>
-            <row>
-              <entry colname="col1"><b><codeph>PHYSICAL</codeph></b></entry>
-              <entry colname="col2">Tangible measures that prevent unauthorised access to physical areas,
-                systems,
-                or assets.</entry>
-            </row>
-            <row>
-              <entry colname="col1"><b><codeph>TECHNICAL</codeph></b></entry>
-              <entry colname="col2">Hardware or software mechanisms that protect information and IT assets.</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table></p>
-      <p>It is important to understand that security classification is determined by the level of risk in case of loss or unauthorised access,
-        and not by the type of information.</p>
-      <p>It is the responsibility of the Data Owner to classify the data.</p>
+      <p>There are six key principles for the secure, timely and efficient sharing of information:</p>
+      <ol>
+      <li>ALL information that the MoJ needs to collect, store, process, generate, dispose or share to deliver services and conduct government business has intrinsic value and requires an appropriate degree of protection.</li>
+      <li>Individual MoJ departments may apply additional security controls and behaviours above (but not below) the baselines outlined in the HMG Government Security Classifications Policy, in line with the <ph conref="conrefs.dita#conrefs/moj"/> risk appetite.</li>
+      <li>Everyone (including staff, contractors and service providers) has a duty of confidentiality and a responsibility to safeguard any MoJ information or data that they access and/or share, irrespective of whether it is marked or not, and must be provided with appropriate training. Individuals are accountable for their own security decisions.</li>
+      <li>Information should be protected proportionately to the impact of compromise and the capability and intent of threat actors likely to seek that information. Access to information must ONLY be granted where there is assurance that appropriate security controls (personnel, physical, procedural and technical) are in place.</li>
+      <li>Information should be handled and distributed on a genuine need-to-know basis, balanced with the need-to-share (as defined in the glossary), dependent on the sensitivity of the information.</li>
+      <li>Information received from or exchanged with external partners MUST be protected in accordance with any relevant legislative or regulatory requirements, including any international agreements and obligations.</li>
+      </ol>
+      </body>
+      <topic id="definitions-of-need-to-know-and-need-to-share">
+  <title>Definitions of need to know and need to share</title>
+<body>
+      <p><b>Need-to-know</b></p>
+      <p>Access to sensitive information must be no wider than necessary for the efficient conduct of official work, and limited to those with a business need and the appropriate personnel security clearance.</p>
+      <p><b>Need-to-share</b></p>
+      <p>Information must be shared with those with a legitimate need.</p>
+
+      <topic id="securing-moj-information">
+  <title>Securing MoJ information</title>
+      <p>Securing the <ph conref="conrefs.dita#conrefs/moj"/> information must be done with a combination of information security measures:
       <ul>
-        <li>Most production data is <ph conref="conrefs.dita#conrefs/official"/> information.
-          Within this,
-          some production data might be classified as <ph conref="conrefs.dita#conrefs/secret"/> information.</li>
-        <li>Most personal data is <ph conref="conrefs.dita#conrefs/official"/> information.
-          Within this,
-          some personal data might be classified as <ph conref="conrefs.dita#conrefs/secret"/> information if it meets the risk threshold defined.</li>
-      </ul>
-        <p>The following table sets out the definitions for each security classification,
-          as well as whether it is necessary to explicitly "mark" a piece of information with its classification type.
-        <table>
-          <tgroup cols="3">
-            <colspec colname="col1" colnum="1"/>
-            <colspec colname="col2" colnum="2"/>
-            <colspec colname="col3" colnum="3"/>
-            <thead>
-              <row>
-                <entry colname="col1">Classification</entry>
-                <entry colname="col2">Definition</entry>
-                <entry colname="col3">Marking</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry colname="col1"><b><ph conref="conrefs.dita#conrefs/official"/></b></entry>
-                <entry colname="col2">All information related to routine public sector business,
-                  operations and services.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Almost all personal information falls within the <ph conref="conrefs.dita#conrefs/official"/> classification.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2"><ph conref="conrefs.dita#conrefs/official-sensitive"/> is not a separate security classification.
-                  It should be used to reinforce the "need to know" principle,
-                  beyond the baseline for <ph conref="conrefs.dita#conrefs/official"/>.</entry>
-                <entry colname="col3"><ph conref="conrefs.dita#conrefs/official"/> data does not need to be marked except where <ph conref="conrefs.dita#conrefs/sensitive"/>,
-                  and must be marked <ph conref="conrefs.dita#conrefs/official-sensitive"/>.</entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><ph conref="conrefs.dita#conrefs/secret"/></b></entry>
-                <entry colname="col2">Very sensitive information that requires protection against highly sophisticated,
-                  well-resourced and determined threat actors,
-                  for example serious and organised crime.</entry>
-                <entry colname="col3">Must be marked</entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><ph conref="conrefs.dita#conrefs/topsecret"/></b></entry>
-                <entry colname="col2">Exceptionally sensitive information that directly supports (or threatens) the national security of the UK or its allies and requires extremely high assurance of protection from all threats.</entry>
-                <entry colname="col3">Must be marked</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table></p>
-        <p>Additional information on how to manage information is described in
-          the <xref href="https://intranet.justice.gov.uk/guidance/knowledge-information/managing-information/" format="html" scope="external">Information Asset Management Policy</xref>.</p>
-        <p>Information security classification may change throughout the information lifecycle.
-          It is important to apply appropriate security classifications and continually evaluate them.</p>
-        <p>The consequences of not classifying information correctly are outlined as follows:
-        <ul>
-          <li>Applying too high a marking can inhibit business operations,
-            such as collaboration,
-            and lead to unnecessary and expensive protective controls being applied.</li>
-          <li>Applying too low a marking may result in inappropriate controls,
-            and may put sensitive assets at greater risk of compromise.</li>
-          <li>Incorrect disposal can lead to unauthorised access to information.
-            Disposal of information should be done using approved processes,
-            equipment or service providers.
-            <ph audience="audience-tech">Refer to the <xref href="data-destruction.dita" format="dita"><ph conref="conrefs.dita#conrefs/moj"/> Data Destruction guide</xref> to understand when the disposal should be witnessed and recorded.</ph></li>
-        </ul></p>
-        </body>
-    </topic>
-    <topic id="official-and-official-sensitive">
-      <title><ph conref="conrefs.dita#conrefs/official"/> and <ph conref="conrefs.dita#conrefs/official-sensitive"/></title>
-      <body>
-        <p>All of the <ph conref="conrefs.dita#conrefs/moj"/>'s information is,
-          at a minimum,
-          <ph conref="conrefs.dita#conrefs/official"/> information.
-          It is very likely that the information you create and use in your <ph conref="conrefs.dita#conrefs/moj"/> day-to-day job is <ph conref="conrefs.dita#conrefs/official"/> information.</p>
-        <p>Examples include:
-        <ul>
-          <li>Routine emails you send to your colleagues.</li>
-          <li>Information posted on the intranet.</li>
-          <li>Supplier contracts.</li>
-          <li>Information and data you use to build a database,
-            such as database secrets,
-            record types,
-            and field types.</li>
-          <li>Most production data.</li>
-          <li>Most non-production data.</li>
-        </ul></p>
-        <p><ph conref="conrefs.dita#conrefs/official"/> means that the <ph conref="conrefs.dita#conrefs/moj"/>'s typical security measures are regarded as sufficient.</p>
-        <p><ph conref="conrefs.dita#conrefs/official-sensitive"/> whilst not a formal classification,
-          should be used sparingly,
-          so that its effectiveness is not weakened.
-          This is especially important when you consider that <ph conref="conrefs.dita#conrefs/official"/> is already well-protected.</p>
-        <p>Use <ph conref="conrefs.dita#conrefs/official-sensitive"/> when you want to remind users to be careful when handling information.
-          This asks them to use extra care,
-          beyond what is expected for the baseline <ph conref="conrefs.dita#conrefs/official"/> classification.</p>
-      </body>
-    </topic>
-    <topic id="secret">
-      <title><ph conref="conrefs.dita#conrefs/secret"/></title>
-      <body>
-        <p>The threshold for classifying information as <ph conref="conrefs.dita#conrefs/secret"/> information is very high.
-          It is unlikely that you will encounter <ph conref="conrefs.dita#conrefs/secret"/> information in your day-to-day job.</p>
-        <p><ph conref="conrefs.dita#conrefs/secret"/> information should not usually be handled unless you have sufficient and valid clearance.
-          If you have gained access to information that you believe is <ph conref="conrefs.dita#conrefs/secret"/>,
-          contact the <ph conref="conrefs.dita#conrefs/securityemailtext"/> immediately.</p>
-        <p>To help decide whether some information should be classified as <ph conref="conrefs.dita#conrefs/secret"/>,
-          ask yourself a simple question:
-          <lq>If a hacker gained unauthorised access to the information,
-            could it compromise the security or prosperity of the country?</lq></p>
-        <p>The answer is most likely "No".
-          In that case,
-          you should consider using the <ph conref="conrefs.dita#conrefs/official"/> classification.</p>
-      </body>
-    </topic>
-    <topic id="top-secret">
-      <title><ph conref="conrefs.dita#conrefs/topsecret"/></title>
-      <body>
-        <p>If the threshold for classifying information as <ph conref="conrefs.dita#conrefs/secret"/> is very high,
-          the threshold for classifying information as <ph conref="conrefs.dita#conrefs/topsecret"/> is extremely high.
-          It is very unlikely that you will encounter <ph conref="conrefs.dita#conrefs/topsecret"/> information in your day-to-day job.</p>
-        <p><ph conref="conrefs.dita#conrefs/topsecret"/> information should not be handled unless you have sufficient and valid clearance.
-          If you have gained access to information that you believe is <ph conref="conrefs.dita#conrefs/topsecret"/>,
-          contact the <ph conref="conrefs.dita#conrefs/securityemailtext"/> immediately.</p>
-        <p>To help decide whether some information should be classified as <ph conref="conrefs.dita#conrefs/topsecret"/>,
-          ask yourself a simple question:
-          <lq>If a hacker gained unauthorised access to the information,
-            would it directly and immediately threaten the national security of the country?</lq></p>
-        <p>The answer is most likely "No".
-          In that case,
-          you should consider using the <ph conref="conrefs.dita#conrefs/official"/> or <ph conref="conrefs.dita#conrefs/secret"/> classification,
-          as appropriate.</p>
-      </body>
-    </topic>
-    <topic id="reclassifying-information" conref="conrefs.dita#reclassifying-information"><title/></topic>
-    <topic id="reclassification-examples">
-      <title>Reclassification examples</title>
-      <body>
-        <p>When deciding whether it is appropriate or desirable to reclassify information,
-          a useful model is to consider what audience might get value from accessing the information.
-          For example,
-          if a hostile country might want the information,
-          then the information might well be best classified as <ph conref="conrefs.dita#conrefs/secret"/>.
-          Alternatively,
-          a reclassification decision might be required as a result of changing threat advice from intelligence agencies.</p>
-      </body>
-      <topic id="example-1">
-        <title>Example 1</title>
-        <body>
-          <p>An asset owner creates a report.
-            The report contains potentially private information about individuals.
-            The asset owner decides that the report should be classified as <ph conref="conrefs.dita#conrefs/official"/>,
-            with the <ph conref="conrefs.dita#conrefs/sensitive"/> handling caveat.</p>
-          <p>A user wishes to share a copy of the report "as-is" with their team.
-            They cannot remove the handling caveat without prior discussion and agreement from the asset owner.</p>
-        </body>
-      </topic>
-      <topic id="example-2">
-        <title>Example 2</title>
-        <body>
-          <p>An asset owner creates a report.
-            The report contains potentially private information about individuals.
-            The asset owner decides that the report should be classified as <ph conref="conrefs.dita#conrefs/official"/>,
-            with the <ph conref="conrefs.dita#conrefs/sensitive"/> handling caveat.</p>
-          <p>A user wishes to share a subset of the report with their team.
-            In particular,
-            the report is substantially re-worked to remove all the private information.
-            The user becomes the owner of this new asset.
-            They are responsible for this new asset.
-            They can decide that the <ph conref="conrefs.dita#conrefs/sensitive"/> handling caveat is not required.</p>
-            <p>The original report retains its <ph conref="conrefs.dita#conrefs/official"/> classification and <ph conref="conrefs.dita#conrefs/sensitive"/> handling caveat.</p>
-        </body>
-      </topic>
-      <topic id="example-3">
-        <title>Example 3</title>
-        <body>
-          <p>An asset owner creates a report.
-            The report contains information about plans to handle a pandemic.
-            The asset owner decides that the report should be classified as <ph conref="conrefs.dita#conrefs/official"/>,
-            with the <ph conref="conrefs.dita#conrefs/sensitive"/> handling caveat.</p>
-          <p>A user reviews the report.
-            They realise that the information could potentially compromise the security or prosperity of the country.
-            They decide to increase the classification of the report,
-            and treat it as <ph conref="conrefs.dita#conrefs/secret"/>.
-            They discuss this decision with the asset owner,
-            so that the original report is correctly reclassified.</p>
-        </body>
-      </topic>
-    </topic>
-    <topic id="handling-and-securing-information">
-    <title>Handling and securing information</title>
-    <body>
-      <p>The <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/>
-        is the most comprehensive guide on the security measures necessary for each of the three security classifications,
-        including measures related to the following:
-      <ul>
-        <li>Personnel (administrative) security.</li>
-        <li>Physical security.</li>
-        <li>Technical (information security).</li>
+      <li>PERSONNEL – Everyone working for the MoJ should be aware of their security responsibilities and in turn acquire security clearances and undertake training to support the <ph conref="conrefs.dita#conrefs/moj"/> information security objectives</li>
+      <li>PHYSICAL - Tangible measures should be implemented to prevent unauthorised access to physical areas, systems, or assets</li>
+      <li>TECHNICAL - Hardware or software mechanisms should be implemented to protect information and IT assets</li>
       </ul></p>
-      <p>The following sections set out the minimum measures you need to consider when handling and securing information within the different levels of classification.</p>
-    </body>
-    <topic id="handling-and-securing-official-and-official-sensitive-information">
-      <title>Handling and securing <ph conref="conrefs.dita#conrefs/official"/> and <ph conref="conrefs.dita#conrefs/official-sensitive"/> information</title>
-      <body>
-        <table>
-          <tgroup cols="3">
-            <colspec colname="col1" colnum="1" colwidth="30*"/>
-            <colspec colname="col2" colnum="2" colwidth="30*"/>
-            <colspec colname="col3" colnum="3" colwidth="40*"/>
-            <thead>
-              <row>
-                <entry colname="col1">Type</entry>
-                <entry colname="col2">Measure</entry>
-                <entry colname="col3">Example</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry colname="col1"><b><codeph>PERSONNEL</codeph></b></entry>
-                <entry colname="col2">Make sure all <ph conref="conrefs.dita#conrefs/moj"/> staff including contractors undergo baseline security clearance checks.</entry>
-                <entry colname="col3">A contractor working with the <ph conref="conrefs.dita#conrefs/moj"/> Security Team must undergo a baseline background check (i.e. BPSS check) at minimum.
-                  Refer to <xref href="https://intranet.justice.gov.uk/guidance/hr/recruitment/security-vetting/" format="html" scope="external">Security Vetting Guidance</xref>.</entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><codeph>PHYSICAL</codeph></b></entry>
-                <entry colname="col2">Make sure that you lock your screen before you leave your desk.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">When working in an unsecured area,
-                  for example when working remotely,
-                  think about whether unauthorised people might be able to eavesdrop on your conversations,
-                  or look over your shoulder at your screen.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">The <ph conref="conrefs.dita#conrefs/moj"/> has additional requirements when moving assets which can be found in the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/>.</entry>
-                <entry colname="col3">A software developer working from a flatshare should take calls in private,
-                  and use headphones and a privacy screen.</entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Transferring information from one location to another requires planning and preparation,
-                  including a risk assessment.
-                  More information on this is available in the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/>,
-                  and from your manager.</entry>
-                <entry colname="col3">A technical architect working on the requirements for a new <ph conref="conrefs.dita#conrefs/moj"/>
-                  platform should lock their laptop before leaving their desk.</entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><codeph>TECHNICAL</codeph></b></entry>
-                <entry colname="col2">Protect information "at rest" by using appropriate encryption.</entry>
-                <entry colname="col3">In the development of a new cloud-hosted solution,
-                  the following criteria should be considered:
-                  remote access connections and sessions are encrypted using an appropriate VPN;
-                  information stored "at rest" on end user devices and the cloud is encrypted;
-                  information in transit between the end user and the cloud service,
-                  such as payment services,
-                  is encrypted;
-                  and the cloud service used is a <ph conref="conrefs.dita#conrefs/gcloud"/> service.</entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Appropriate encryption is also necessary when protecting information in transit.</entry>
-                <entry colname="col3">When using any services over the PSN,
-                  make sure you fully read the agreements that you make with the service provider for details and definitions about the data you use or transfer
-                  using the service,
-                  to ensure you understand the risks to compliance,
-                  confidentiality,
-                  integrity,
-                  and availability.</entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2"><ph conref="conrefs.dita#conrefs/gcloud"/> services can be used for <ph conref="conrefs.dita#conrefs/official"/> information.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">You must not use removable media such as an USB memory stick unless it is unavoidable.
-                  When you have to use one,
-                  it must be <ph conref="conrefs.dita#conrefs/moj"/> issued,
-                  encrypted so that the effects of losing it are minimised,
-                  and the data erased securely after use.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <note><ph id="continuallyevaluate">Different information security measures might be applicable throughout the information lifecycle.
-          It is important continually to evaluate security classifications and their corresponding measures.
-          Refer to the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/> for further guidance.</ph></note>
       </body>
-    </topic>
-    <topic id="handling-and-securing-secret-information">
-      <title>Handling and securing <ph conref="conrefs.dita#conrefs/secret"/> information</title>
-      <body>
-        <table>
-          <tgroup cols="3">
-            <colspec colname="col1" colnum="1" colwidth="30*"/>
-            <colspec colname="col2" colnum="2" colwidth="30*"/>
-            <colspec colname="col3" colnum="3" colwidth="40*"/>
-            <thead>
-              <row>
-                <entry colname="col1">Type</entry>
-                <entry colname="col2">Measure</entry>
-                <entry colname="col3">Example</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry colname="col1"><b><codeph>PERSONNEL</codeph></b></entry>
-                <entry colname="col2">Make sure employees and contractors undergo Security Check (SC).</entry>
-                <entry colname="col3">A contractor working with the <ph conref="conrefs.dita#conrefs/moj"/> Security Team must have at least SC before being allowed to access <ph conref="conrefs.dita#conrefs/secret"/> information.</entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><codeph>PHYSICAL</codeph></b></entry>
-                <entry colname="col2">Consider using multiple layers of security to protect <ph conref="conrefs.dita#conrefs/secret"/> information.
-                  <ph conref="conrefs.dita#conrefs/secret"/> information should be held on a secure computer network which is physically isolated from unsecured networks and the internet.</entry>
-                <entry colname="col3">Imagine you are moving locations for a server used to host <ph conref="conrefs.dita#conrefs/secret"/> information.
-                  The encrypted server is secured in a locked and monitored room in 102 Petty France.
-                  You have now decided to move it to 10 South Colonnade.
-                  This should only be done after relevant parties,
-                  including the data owner,
-                  line manager,
-                  and the system owner,
-                  have reviewed and accepted the risks associated with this transfer.
-                  The transfer should then be handled by two SC-cleared individuals,
-                  for example,
-                  employees of a specialised commercial courier company.</entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Transferring <ph conref="conrefs.dita#conrefs/secret"/> information from one location to another requires planning and preparation,
-                  including the completion of a Risk Assessment and the use of SC-cleared personnel.
-                  More information on this is available in the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/> and from your manager.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><codeph>TECHNICAL</codeph></b></entry>
-                <entry colname="col2"><ph conref="conrefs.dita#conrefs/secret"/> information at rest should be protected with very strong encryption.
-                  Contact the <ph conref="conrefs.dita#conrefs/mojsecurityemailtext"/> for more information.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Care should be taken to ensure that <ph conref="conrefs.dita#conrefs/secret"/> information in transit is only shared with defined recipient users through assured shared infrastructure or using very strong encryption.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2"><ph conref="conrefs.dita#conrefs/secret"/> information should be processed on IT systems which have been approved for the <ph conref="conrefs.dita#conrefs/secret"/> threat model. Advice on what commercial IT systems meet this requirement is available from the <ph conref="conrefs.dita#conrefs/mojsecurityemailtext"/>.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <note><ph conref="#handling-and-securing-official-and-official-sensitive-information/continuallyevaluate"/></note>
-      </body>
-    </topic>
-    <topic id="handling-and-securing-top-secret-information">
-      <title>Handling and securing <ph conref="conrefs.dita#conrefs/topsecret"/> information</title>
-      <body>
-        <table>
-          <tgroup cols="3">
-            <colspec colname="col1" colnum="1" colwidth="30*"/>
-            <colspec colname="col2" colnum="2" colwidth="30*"/>
-            <colspec colname="col3" colnum="3" colwidth="40*"/>
-            <thead>
-              <row>
-                <entry colname="col1">Type</entry>
-                <entry colname="col2">Measure</entry>
-                <entry colname="col3">Example</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry colname="col1"><b><codeph>PERSONNEL</codeph></b></entry>
-                <entry colname="col2">Ensure employees and contractors undergo Developed Vetting (DV) security clearance checks.</entry>
-                <entry colname="col3">A contractor working with the <ph conref="conrefs.dita#conrefs/moj"/> Security Team should have at least DV clearance
-                  before being allowed to access <ph conref="conrefs.dita#conrefs/topsecret"/> information.</entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><codeph>PHYSICAL</codeph></b></entry>
-                <entry colname="col2">Handling and storing <ph conref="conrefs.dita#conrefs/topsecret"/> information requires exceptional planning,
-                  monitoring,
-                  and record-keeping.</entry>
-                <entry colname="col3">Imagine you are moving locations for a server used to host <ph conref="conrefs.dita#conrefs/topsecret"/> information.
-                  The encrypted server is secured in a locked and continuously monitored room in 102 Petty France.
-                  You have now decided to move it to 10 South Colonnade.
-                  This should only be done after you,
-                  your manager,
-                  and senior managers have reviewed and accepted the risks associated with this transfer.
-                  The transfer should then be handled by two DV-cleared individuals,
-                  for example, employees of a specialised commercial courier company.
-                  When it happens,
-                  local police may need to be informed and involved in providing an additional layer of security.</entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Working remotely with <ph conref="conrefs.dita#conrefs/topsecret"/> is not permitted due to the extreme sensitivity of the information.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Transferring <ph conref="conrefs.dita#conrefs/topsecret"/> information from one location to another
-                  requires even greater planning and preparation than for <ph conref="conrefs.dita#conrefs/secret"/> information,
-                  including the completion of a Risk Assessment by senior management and the use of DV-cleared personnel.
-                  More information on this is available in the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/> and from your manager.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"><b><codeph>TECHNICAL</codeph></b></entry>
-                <entry colname="col2">When physical security measures cannot be used,
-                  <ph conref="conrefs.dita#conrefs/topsecret"/> information at rest should be protected with extremely strong encryption.
-                  Contact the <ph conref="conrefs.dita#conrefs/mojsecurityemailtext"/> in these circumstances.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2">Care should be taken to ensure that <ph conref="conrefs.dita#conrefs/topsecret"/> information in transit
-                  is only shared with defined recipient users through accredited shared infrastructure or using extremely strong encryption.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-              <row>
-                <entry colname="col1"> </entry>
-                <entry colname="col2"><ph conref="conrefs.dita#conrefs/topsecret"/> information should be processed on IT systems
-                  which have been approved <foreign></foreign>the <ph conref="conrefs.dita#conrefs/topsecret"/> threat model.
-                  Advice on what commercial IT systems meet this requirement is available from the <ph conref="conrefs.dita#conrefs/moj"/>
-                  <ph conref="conrefs.dita#conrefs/securityemailtext"/>.</entry>
-                <entry colname="col3"> </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <note><ph conref="#handling-and-securing-official-and-official-sensitive-information/continuallyevaluate"/></note>
-        <note>For further information on statutory disclosures and transfer to national archives,
-          please refer to the <ph conref="conrefs.dita#conrefs/hmggovernmentsecurityclassifications"/>.</note>
-      </body>
-    </topic>
-  </topic>
-  <topic id="contact-details" conref="conrefs.dita#contact-details"><title/></topic>
-  <topic id="feedback" platform="html" conref="conrefs.dita#feedback"><title/></topic>
+      </topic>
+
+      <topic id="classifying-information">
+  <title>Classifying information</title>
+  <body>
+  <p>Security classification is determined by the impact of its loss or unauthorised access to it, and not by the type of information.</p>
+  <p>It is the responsibility of the Data Owner to classify the data. However, anyone handling that data should be aware of their responsibility to protect the information.</p>
+  <p>The MoJ uses three classification tiers:
+  <ul>
+  <li>OFFICIAL</li>
+  <li>SECRET</li>
+  <li>TOP SECRET</li>
+  </ul></p>
+  <p>Most data handled by the MoJ will be classified as OFFICIAL.</p>
+  <p>Each classification provides a set of protective security controls and baseline behaviours, which are proportionate to the potential impact of:
+  <ul>
+  <li>a compromise</li>
+  <li>accidental loss</li>
+  <li>incorrect disclosure</li>
+  <li>the level of interest expected from threat actors</li>
+  </ul></p>
+  <p>The protective controls must be balanced with the need for utilising those assets to support the effective conduct of MoJ business.</p>
+<p>Information security classification may change throughout the information lifecycle.</p>
+<p>It is important to apply appropriate security classifications, continually evaluate them, and consider that:
+<ul>
+<li>applying too high a marking may inhibit business operations, such as collaboration, and lead to unnecessary and expensive protective controls being applied</li>
+<li>applying too low a marking may result in inappropriate controls, and may put sensitive assets at greater risk of compromise</li>
+<li>incorrect disposal may lead to unauthorised access to information. Disposal of information should be done using approved processes, equipment or service providers. Refer to the <ph conref="conrefs.dita#conrefs/moj"/> <xref href="data-destruction.dita" format="dita">Data Destruction Guide</xref> to understand when the disposal should be witnessed and recorded</li>
+</ul></p>
+<p>Additional information on how to manage information is described in the Information Asset Management Policy.</p>
+<p>Information classified SECRET or TOP SECRET must not be shared via Non-Corporate Communications Channels (NCCC).</p>
+
+</body>
+</topic>
+
+<topic id="official">
+  <title>OFFICIAL</title>
+<body>
+<p>All information related to MoJ routine business, operations, and services.</p>
+<p>If OFFICIAL information is compromised, lost, stolen, or published, it would cause no more than moderate damage.</p>
+<p>Aggregated data sets of OFFICIAL information may warrant additional controls. See <xref href="https://www.gov.uk/government/publications/government-security-classifications/guidance-15-considerations-for-security-advisors-html" format="html" scope="external">Guidance 1.5: Considerations for Security Advisors</xref>.</p>
+<p>National security vetting is not required to access OFFICIAL information but all HMG staff and contractors must undergo a BPSS pre-employment check (or equivalent).</p>
+<p>Contracting Authorities should continue to ensure all contractors that have access to MoJ information continue to follow the vetting requirements outlined in Contractual Process 2018.</p>
+<p><b>Threat profile</b></p>
+<p>The threat profile for the OFFICIAL classification tier anticipates a need to defend against a broad range of threat actors, which may include:
+<ul>
+<li>staff who pose insider risk</li>
+<li>unauthorised leaks to the media</li>
+<li>criminal individuals and groups</li>
+</ul></p>
+
+<p><xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#definitions-for-official-secret-and-top-secret" format="html" scope="external">More information about OFFICIAL threat profiles</xref>.</p>
+
+<p><b>Working at OFFICIAL</b></p>
+<p><xref href="https://www.gov.uk/government/publications/government-security-classifications/guidance-11-working-at-official-html" format="html" scope="external">Guidance 1.1: Working at OFFICIAL</xref> offers policy guidance on working at OFFICIAL.</p>
+<p><b>Risks of a compromise</b></p>
+<p>In most cases there are few negative consequences if OFFICIAL information is compromised.</p>
+<p>However, unintended disclosure or compromise of OFFICIAL information marked, -SENSITIVE, may lead to moderate damage (including to the UK’s longer-term strategic/economic position) and in exceptional circumstances to a threat to life.</p>
+<p>Due to the wide-ranging sensitivity of different information that sits within this tier, the effect of an accidental or deliberate compromise at OFFICIAL may be wide-ranging.</p>
+<p>The <xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#definitions-for-official-secret-and-top-secret" format="html" scope="external">Government Security Classifications Policy</xref> gives guidance on the risks of compromise of OFFICIAL information, and how it affects:
+<ul>
+<li>life and safety</li>
+<li>international relations</li>
+<li>military operations</li>
+<li>prosperity</li>
+<li>security and intelligence</li>
+</ul></p>
+
+<p><b>What to do in the event of a compromise</b></p>
+<p><xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#annex-b---what-to-do-in-the-event-of-a-compromise-of-official-secret-top-secret-information" format="html" scope="extrenal">Annex B to the Government Security Classifications Policy</xref> offers guidance on what to do if OFFICIAL, SECRET or TOP SECRET information is compromised.</p>
+<p><B>OFFICIAL and OFFICIAL-SENSITIVE</b></p>
+<p>OFFICIAL-SENSITIVE is information that is not intended for public release and that is of at least some interest to threat actors (internal or external), activists or the media.</p>
+<p>OFFICIAL information that uses the -SENSITIVE marking is likely to be of interest to threat actors due to its sensitivity or topical significance. A compromise may cause moderate, short-term damage to: HMG, the UK’s international reputation, the UK economy, HMG’s relations with its partners (including international partners) or moderate harm or distress to an individual or group of people.</p>
+
+<p><xref href="https://www.gov.uk/government/publications/government-security-classifications/guidance-11-working-at-official-html" format="html" scope="external">Guidance 1.1: Working at OFFICIAL</xref> gives more information.</p>
+<p>Whilst OFFICIAL and OFFICIAL-SENSITIVE are the classifications most used in the MoJ, certain areas may use SECRET or TOP SECRET.</p>
+</body>
+</topic>
+
+<topic id="secret">
+<title><ph conref="conrefs.dita#conrefs/secret"/></title>
+<body>
+<p>SECRET is applied to very sensitive information that requires enhanced protective controls, suitable to defend against highly capable and determined threat actors, whereby a compromise could threaten life (an individual or group), seriously damage the UK’s security and/or international relations, its financial security/stability or impede its ability to investigate serious and organised crime.</p>
+<p>For regular, unsupervised access to Secret information, someone would be expected to have passed National Security Vetting Security Check (SC) clearance.</p>
+<p>In exceptional circumstances, someone with BPSS might be granted occasional supervised access to UK Secret assets, or be required to work in areas where Secret or Top Secret information might be overheard.</p>
+<p>Whilst the SECRET classification is not widely-used in the MoJ, <xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#definitions-for-official-secret-and-top-secret" format="html" scope="external">The Government security classifications policy</xref> gives guidance on the risks of compromise of SECRET information, and how it affects:
+<ul>
+<li>life and safety</li>
+<li>international relations</li>
+<li>military operations</li>
+<li>prosperity</li>
+<li>security and intelligence</li>
+</ul></p>
+<p><xref href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1166149/Guidance_1.2__Working_at_SECRET.pdf" format="html" scope="external">Guidance 1.2 - Working at SECRET</xref> gives more information.</p>
+</body>
+</topic>
+
+<topic id="top-secret">
+<title><ph conref="conrefs.dita#conrefs/topsecret"/></title>
+<body>
+<p>TOP SECRET refers to exceptionally sensitive information assets that directly support or inform the national security of the UK or its allies AND require an extremely high assurance of protection from all threats with the use of secure networks on highly secured dedicated physical infrastructure, and robustly defined and implemented boundary security controls.</p>
+<p>For regular, unsupervised access to TOP SECRET information, employees and contractors should have undergone Developed Vetting (DV) security clearance checks.</p>
+<p>Whilst the TOP SECRET classification is not widely-used in the MoJ, The Government security classifications policy gives guidance on the risks of compromise of TOP SECRET information, and how it affects:
+<ul>
+<li>life and safety</li>
+<li>international relations</li>
+<li>military operations</li>
+<li>prosperity</li>
+<li>security and intelligence</li>
+</ul></p>
+<p><xref href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1166150/Guidance_1.3__Working_at_TOP_SECRET.pdf" format="html" scope= "external">Guidance 1.3 - Working at TOP SECRET</xref> gives more information.</p>
+</body>
+</topic>
+
+<topic id="reclassifying-information" conref="conrefs.dita#reclassifying-information"><title/></topic>
+<topic id="reclassification-examples">
+<title>Reclassification examples</title>
+<body>
+<p>The classification of an asset can only be changed and/or reclassified by the information owner.</p>
+<p>Information users may challenge the classification of an asset with a reasoned argument.</p>
+<p>A consideration to reclassify an information asset should consider the right balance between controls to protect information with the need to utilise assets to support the effective conduct of government business (i.e. a need-to-know and need-to-share consideration).</p>
+</body>
+</topic>
+
+<topic id="handling-and-securing-information">
+<title>Handling and securing information</title>
+<body>
+<p>Within a classification tier, handling instructions can also be used to give a more detailed picture of the information’s sensitivity and how it should be appropriately handled.</p>
+<p>Handling instructions do not change the information’s classification as the threat profile is the same, nor do they offer additional technical protections; they just provide more detail around how information should be handled, how widely it should be disseminated and how it should be protected.</p>
+<p>A centrally defined list of handling instructions is shown in the <xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#additional-markings" format="html" scope="external">Additional Markings section of the Government Security Classifications Policy</xref>.</p>
+</body>
+</topic>
+
+<topic id="additional-markings">
+<title>Additional markings</title>
+<body>
+<p>Additional markings can be added in conjunction with a classification to indicate the nature or source of the information, or to limit access to specific user groups.</p>
+<p>Additional markings indicate where additional protective controls or security behaviours are required to protect the information.</p>
+<p>There are several different types of additional markings, including:
+<ul>
+<li>the -SENSITIVE marking</li>
+<li>handling instructions</li>
+</ul><p>
+<p>Information creators should apply additional markings to help users understand information sensitivities and specific restrictions on information sharing.</p>
+<p>Security teams must offer guidance to users on how to mark and protect information with additional markings.</p>
+<p>The <xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#additional-markings" format="html" scope="external">HMG Government Security Classifications Policy</xref> gives more information about additional markings.</p>
+</body>
+</topic>
+
+<topic id="publication-and-disclosure">
+<title>Publication and disclosure</title>
+<body>
+<p>If sensitive information is being considered for publication or disclosure, every effort should be made to consult the information creator and/or originating department.</p>
+<p>Please refer to the <xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#further-considerations-for-users" format="html" scope="external">HMG Government Security Classifications Policy</xref></p>.
+<p><b>Note:</b> Different information security measures might be applicable throughout the information lifecycle. It is important continually to evaluate security classifications and their corresponding measures. Refer to the<xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#further-considerations-for-users" format="html" scope="external">HMG Government Security Classifications Policy for further guidance.</p>
+
+<p><b>Legal framework</b></p>
+<p><xref href="https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html#annex-a---legal-framework" format="html" scope="external">Annex A to the Government Security Classification Policy</xref> describes how the policy acts within the framework of domestic law.</p>
+</body>
+</topic>
+
+<topic id="glossary">
+<title>Glossary</title>
+<body>
+<p>
+<ul>
+<p><b>Classification Tier</b> - Indicates the sensitivity of the asset in terms of the likely impact resulting from compromise, loss or misuse, AND provides baseline controls and behaviours to protect against distinct threat profiles, which reflect the broad range of threat actors typically expected at that classification.</p>
+<p><b>Compromise</b> - In the context of security, a compromise occurs when a classified asset (including people, property or information) is exposed intentionally or unintentionally to a system, device, or an unauthorised individual without the appropriate security clearance and/or need-to-know and without a legitimate business need (see need-to-share).</p>
+<p><b>Controls</b> - The protective security measures that aim to reduce and manage the risk of assets being compromised.</p>
+<p><b>Delivery Partner (organisation)</b> - A contractor who has a legitimate business need and the necessary clearance to access, store or process government information, and can be trusted to handle the information appropriately.</p>
+<p><b>Descriptors</b> - Descriptors are applied by users to easily identify certain categories or types of information with special sensitivities and highlight additional access restrictions.</p>
+<p><b>Handling Instructions</b> - Markings which are used within a classification tier to provide additional instructions to staff when handling information. They help protect a range of information with varying sensitivity against a classification’s broad threat profile.</p>
+<p><b>Identifiable Living Individual</b> - A living individual who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data or an online identifier, or one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of the individual (Data Protection Act, 2018).</p>
+<p><b>Information Creator</b> - The person who has the authority over the creation or distribution of an information asset, and is responsible for determining the classification, handling, dissemination and disposal of that information.</p>
+<p><b>Information User</b> - The staff, delivery partners and third-party suppliers who process HMG information assets, and are personally accountable for handling, disseminating and disposing of the information responsibly in line with HMG policy.</p>
+<p><b>Insider Risk</b> - Risk arising from a person who (knowingly or unknowingly) misuses legitimate access to compromise, or risk compromise, of classified information.</p>
+<p><b>Need-to-know</b> - Access to sensitive information must be no wider than necessary for the efficient conduct of official work, and limited to those with a business need and the appropriate personnel security clearance.</p>
+<p><b>Need-to-share</b> - Information must be shared with those with a legitimate need. Information is only valuable to a user once they have access to it.</p>
+<p><b>Organisation</b> - HMG departments or agencies, public bodies and government contractors who are responsible for accessing, storing or processing government information.</p>
+<p><b>Personal Data</b> - Any information relating to an identified or identifiable living individual (Data Protection Act, 2018).</p>
+<p><b>Security Outcomes</b> - The baseline aims that an organisation must use when developing appropriate and proportionate information, personnel, physical and cyber security controls, to manage risks to an acceptable level within the organisational risk appetite.</p>
+<p><b>Security Risk</b> - A risk arising from a failure to prevent unauthorised and/or inappropriate access to an asset.</p>
+<p><b>Threat Actor</b> - A person/entity/state which has the capability and intent to impact the security of an asset (including people, property or information). Can also be called a malicious actor.</p>
+</ul></p>
+</body>
+</topic>
+
+</topic>
+<topic id="contact-details" conref="conrefs.dita#contact-details"><title/></topic>
+<topic id="feedback" platform="html" conref="conrefs.dita#feedback"><title/></topic>
 </topic>
